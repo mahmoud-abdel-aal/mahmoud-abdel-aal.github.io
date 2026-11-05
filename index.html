@@ -1,0 +1,715 @@
+<title>Mahmoud Abdel-Aal Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a performance ledger — tall condensed numbers set against a quiet reading column; each brand is one chapter with a before→after strip, a monthly ROAS chart and the raw Ads Manager evidence. */
+:root{
+  --paper:#F6F7F5;      /* cool off-white with a faint green bias */
+  --sheet:#FFFFFF;
+  --ink:#10211F;        /* deep teal-ink */
+  --muted:#5B6B68;
+  --rule:#D9DFDC;
+  --accent:#0F6B5C;     /* palm green */
+  --gain:#C98A0B;       /* saffron for the result figures */
+  --soft:#E7EEEB;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0D1514;--sheet:#131E1C;--ink:#E6EEEB;--muted:#93A5A0;--rule:#24332F;--accent:#4FC2A8;--gain:#F2B53A;--soft:#18302B;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0D1514;--sheet:#131E1C;--ink:#E6EEEB;--muted:#93A5A0;--rule:#24332F;--accent:#4FC2A8;--gain:#F2B53A;--soft:#18302B;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.02}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Hero */
+header.hero{padding-block:56px 40px;border-bottom:1px solid var(--rule);display:grid;gap:28px}
+.hero h1{font-size:clamp(44px,8vw,96px);font-weight:800;font-stretch:72%;letter-spacing:-.01em;text-transform:uppercase}
+.hero .role{font-family:var(--display);font-stretch:110%;font-weight:500;font-size:clamp(18px,2.4vw,24px);color:var(--accent)}
+.hero p.lede{max-width:62ch;margin:0;color:var(--ink)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.meta span b{color:var(--ink);font-weight:500}
+
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:8px}
+.board div{background:var(--sheet);padding:18px 18px 16px;display:grid;gap:4px;align-content:start}
+.board .big{font-family:var(--display);font-weight:800;font-stretch:70%;font-size:clamp(34px,5vw,52px);line-height:1;color:var(--gain)}
+.board .lbl{font-size:13px;color:var(--muted);line-height:1.4}
+@media (max-width:760px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.who{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center}
+.me{width:clamp(96px,14vw,150px);aspect-ratio:1;max-width:100%;border-radius:50%;object-fit:cover;border:3px solid var(--sheet);box-shadow:0 0 0 1px var(--rule)}
+.links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-family:var(--mono);font-size:13.5px}
+.links .email,.reach .email{user-select:all;color:var(--ink)}
+.reach{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;font-family:var(--mono);font-size:14px}
+.reach button{font:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);cursor:pointer}
+.reach button:hover{border-color:var(--accent)}
+@media (max-width:560px){.who{grid-template-columns:1fr}}
+/* Skills */
+section.skills{padding-block:40px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px}
+.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.skills li{font-family:var(--mono);font-size:13px;padding:6px 10px;border:1px solid var(--rule);background:var(--sheet)}
+.skills .groups{display:grid;gap:18px}
+.skills h3{font-size:15px;font-weight:700;font-stretch:100%;margin-bottom:8px}
+@media (max-width:760px){section.skills{grid-template-columns:1fr}}
+
+/* Index */
+nav.index{padding-block:28px;border-bottom:1px solid var(--rule)}
+nav.index ol{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+nav.index a{display:grid;gap:2px;text-decoration:none;color:var(--ink);padding:12px 14px;border:1px solid var(--rule);background:var(--sheet)}
+nav.index a:hover{border-color:var(--accent)}
+nav.index .k{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:26px;color:var(--accent);line-height:1}
+nav.index .n{font-weight:600}
+nav.index .s{font-size:13px;color:var(--muted)}
+@media (max-width:900px){nav.index ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mark.logo{padding:6px;background:#fff}
+.mark.logo img{width:100%;height:100%;object-fit:contain;display:block}
+.mark.logo.full{padding:0;overflow:hidden}
+.mark.logo.full img{object-fit:cover}
+
+/* Case */
+article.case{padding-block:56px;border-bottom:1px solid var(--rule);display:grid;gap:28px}
+.case-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center}
+.mark{width:72px;height:72px;display:grid;place-items:center;border:1.5px solid var(--ink);font-family:var(--display);font-weight:800;font-stretch:70%;font-size:24px;letter-spacing:.02em;background:var(--sheet)}
+.case h2{font-size:clamp(34px,5.5vw,60px);font-weight:800;font-stretch:75%;text-transform:uppercase}
+.tags{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.headline{font-family:var(--display);font-stretch:95%;font-weight:700;font-size:clamp(22px,3vw,30px);line-height:1.2;max-width:30ch}
+.headline em{font-style:normal;color:var(--gain)}
+
+.ba{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ba .kpi{background:var(--sheet);border:1px solid var(--rule);padding:16px;display:grid;gap:6px}
+.ba .kname{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ba .row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ba .from{font-family:var(--display);font-stretch:75%;font-weight:700;font-size:22px;color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.ba .arrow{color:var(--muted)}
+.ba .to{font-family:var(--display);font-stretch:70%;font-weight:800;font-size:40px;line-height:1;color:var(--ink)}
+.ba .delta{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500}
+.ba.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.ba,.ba.two{grid-template-columns:1fr}}
+
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.cols h3{font-size:16px;font-weight:700;font-stretch:100%;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
+.cols p,.cols ul{margin:0;font-size:15px;max-width:60ch}
+.cols ul{padding-left:18px;display:grid;gap:6px}
+@media (max-width:860px){.cols{grid-template-columns:1fr;gap:20px}}
+
+.chart{background:var(--sheet);border:1px solid var(--rule);padding:18px 18px 10px}
+.chart .cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.chart .cap b{font-weight:600}
+.chart .cap span{font-size:13px;color:var(--muted)}
+.chart svg{display:block;width:100%;height:auto}
+.chart .scroll{overflow-x:auto}
+
+.evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.evidence.one{grid-template-columns:minmax(0,1fr)}
+figure{margin:0;display:grid;gap:8px}
+figure img{width:100%;border:1px solid var(--rule);background:#fff;display:block}
+figcaption{font-size:13px;color:var(--muted);font-family:var(--mono)}
+@media (max-width:760px){.evidence{grid-template-columns:1fr}}
+
+.own{padding-block:48px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start}
+.own p{margin:6px 0 0;max-width:62ch}
+
+footer{padding-block:40px 64px;display:grid;gap:10px;font-size:14px;color:var(--muted)}
+footer .contact{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:26px;color:var(--ink)}
+.note{font-size:12.5px;color:var(--muted);max-width:80ch}
+@media (prefers-reduced-motion:no-preference){.board .big{transition:color .3s}}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Portfolio · Performance Marketing · GCC E‑commerce</div>
+  <div class="who">
+    <img class="me" src="img/me.jpg" alt="Mahmoud Abdel-Aal">
+    <div>
+      <h1>Mahmoud Abdel-Aal</h1>
+      <div class="role">Performance Media Buyer — Meta, Snapchat, TikTok &amp; Google</div>
+      <div class="links"><a href="https://www.linkedin.com/in/mahmoud-abdel-aal-51a70a199" target="_blank" rel="noopener">LinkedIn</a><a href="https://wa.me/201091789198" target="_blank" rel="noopener">WhatsApp</a><span class="email num">mahmoudtaleb5200@gmail.com</span><span class="email num">+20 109 178 9198</span></div>
+    </div>
+  </div>
+  <p class="lede">I scale Shopify brands across Kuwait, the UAE, Qatar and Egypt with paid social. My work is structured testing, creative iteration and disciplined budget scaling, judged on revenue, ROAS and cost per order. Every figure below comes straight from the brands' Meta Ads Manager accounts, with the screenshots attached.</p>
+  <div class="meta">
+    <span><b>Markets</b> Kuwait · UAE · Qatar · Egypt</span>
+    <span><b>Verticals</b> F&amp;B, chocolate, coffee, nuts</span>
+    <span><b>Stack</b> Shopify · Meta Pixel/CAPI · Snap &amp; TikTok Pixels · UTMs</span>
+  </div>
+  <div class="board">
+    <div><span class="big num">$534K</span><span class="lbl">Meta‑attributed revenue for Mahashi Station in 2026, at 4.03x ROAS</span></div>
+    <div><span class="big num">9×</span><span class="lbl">Monthly spend scaled at Mahashi Station while ROAS rose from 2.75x to 4.46x</span></div>
+    <div><span class="big num">5.33x</span><span class="lbl">Peak monthly ROAS for Verona Choco (June 2025, 166.8K SAR revenue)</span></div>
+    <div><span class="big num">+143%</span><span class="lbl">ROAS lift at Caffeinco within the first nine weeks of taking over</span></div>
+  </div>
+</header>
+
+<section class="skills">
+  <div class="eyebrow">What I do</div>
+  <div class="groups">
+    <div><h3>Channels</h3><ul><li>Meta Ads</li><li>Snapchat Ads</li><li>TikTok Ads</li><li>Google Ads</li></ul></div>
+    <div><h3>Methods</h3><ul><li>ABO creative testing</li><li>CBO scaling</li><li>Winner‑audience retargeting</li><li>Influencer &amp; UGC single‑ad tests</li><li>Seasonal planning (Ramadan, Eid, Graduation)</li><li>Multi‑country budget splits</li></ul></div>
+    <div><h3>Measurement</h3><ul><li>ROAS &amp; CPA targets</li><li>UTM tracking</li><li>Shopify revenue reconciliation</li><li>Monthly client reporting</li></ul></div>
+  </div>
+</section>
+
+<nav class="index" aria-label="Case studies">
+  <div class="eyebrow">Case studies</div>
+  <ol>
+    <li><a href="#mahashi"><span class="k num">4.03x</span><span class="n">Mahashi Station</span><span class="s">Kuwait · 2026</span></a></li>
+    <li><a href="#verona"><span class="k num">4.45x</span><span class="n">Verona Choco</span><span class="s">Kuwait · 2025</span></a></li>
+    <li><a href="#caffeinco"><span class="k num">3.43x</span><span class="n">Caffeinco</span><span class="s">KW · UAE · QA · 2026</span></a></li>
+    <li><a href="#nashmi"><span class="k num">3.14x</span><span class="n">Al Nashmi</span><span class="s">Kuwait · 2026</span></a></li>
+    <li><a href="#antep"><span class="k num">+761%</span><span class="n">Antep</span><span class="s">Kuwait · Ramadan 2026</span></a></li>
+    <li><a href="#batci"><span class="k num">KWD 42K</span><span class="n">Ghaya Cosmetics</span><span class="s">Kuwait · 2025 – 2026</span></a></li>
+    <li><a href="#scrub"><span class="k num">−51%</span><span class="n">Scrubs &amp; More</span><span class="s">Kuwait · 2026</span></a></li>
+    <li><a href="#mazag"><span class="k num">15.58x</span><span class="n">Mazag Al Molouk</span><span class="s">Egypt · Ramadan 2026</span></a></li>
+    <li><a href="#woi"><span class="k num">SAR 4.09</span><span class="n">World of Investment</span><span class="s">Saudi Arabia · 2025 – 2026</span></a></li>
+  </ol>
+</nav>
+
+<!-- MAHASHI -->
+<article class="case" id="mahashi">
+  <div class="case-head">
+    <div class="mark logo full"><img src="img/logo_mahashi.jpg" alt="Mahashi Station logo"></div>
+    <div>
+      <div class="eyebrow">Case study 01</div>
+      <h2>Mahashi Station</h2>
+      <div class="tags"><span>Kuwait</span><span>Food delivery · Shopify</span><span>Meta Ads</span><span>Jan – Nov 2026</span><span>USD</span></div>
+    </div>
+  </div>
+  <p class="headline">Scaled monthly spend <em>9×</em> and grew ROAS at the same time, reaching <em>$534K</em> in attributed revenue in ten months.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Monthly spend</span><div class="row"><span class="from num">$2.7K</span><span class="arrow">→</span><span class="to num">$24.3K</span></div><span class="delta">Jan → Jun 2026 · 9.1×</span></div>
+    <div class="kpi"><span class="kname">Monthly ROAS</span><div class="row"><span class="from num">2.75x</span><span class="arrow">→</span><span class="to num">5.11x</span></div><span class="delta">Jan → Oct 2026 · +86%</span></div>
+    <div class="kpi"><span class="kname">Orders in peak month</span><div class="row"><span class="to num">1,018</span></div><span class="delta">June 2026 · $108.3K revenue</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A local food brand spending under $3K a month on Meta, with ROAS below 3x. The goal was to grow order volume fast without the efficiency drop that usually comes with higher budgets.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>ABO structure to isolate and test creatives one ad at a time.</li>
+      <li>Influencer single‑ad campaigns refreshed monthly (April, May, July, August batches).</li>
+      <li>Dedicated studio‑creative campaign for product shots.</li>
+      <li>Budget moved into proven winners and scaled for Ramadan and summer peaks.</li>
+    </ul></div>
+    <div><h3>Results (2026)</h3><ul>
+      <li class="num">$132.6K spend → $534.5K revenue</li>
+      <li class="num">4.03x blended ROAS · 5,957 purchases</li>
+      <li class="num">Studio‑creative campaign hit 6.90x ROAS in October</li>
+      <li class="num">ROAS held above 4x in 6 of the last 8 months</li>
+    </ul></div>
+  </div>
+  <div class="chart">
+    <div class="cap"><b>Monthly ROAS, 2026</b><span>Bar labels show monthly spend · Meta Ads Manager</span></div>
+    <div class="scroll" id="chart-mahashi"></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/mahashi_2026_ytd.jpg" alt="Ads Manager table, Mahashi Station, 1 Jan to 2 Nov 2026: $132,645.64 spent, $534,498.22 purchase value, 4.03 ROAS, 5,957 purchases" loading="lazy"><figcaption>1 Jan – 2 Nov 2026 · full year to date</figcaption></figure>
+    <figure><img src="img/mahashi_jun2026.jpg" alt="Ads Manager table, Mahashi Station, June 2026: $24,289.19 spent, $108,295.92 purchase value, 4.46 ROAS, 1,018 purchases" loading="lazy"><figcaption>June 2026 · peak month</figcaption></figure>
+    <figure><img src="img/mahashi_oct2026.jpg" alt="Ads Manager table, Mahashi Station, October 2026: $9,600.65 spent, $49,017.22 purchase value, 5.11 ROAS, 574 purchases" loading="lazy"><figcaption>October 2026 · highest ROAS (5.11x)</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">Store sales, 2026 (KWD)</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Total sales, Jan – Oct 2026</span><div class="row"><span class="to num">KWD 269.6K</span></div><span class="delta">Ordering system Jan–Jul + Shopify Aug–Oct</span></div>
+    <div class="kpi"><span class="kname">Jan – Jul 2026</span><div class="row"><span class="to num">8,884</span></div><span class="delta">Invoices · KWD 196.7K</span></div>
+    <div class="kpi"><span class="kname">Store sales ÷ ad spend</span><div class="row"><span class="to num">≈4.6x</span></div><span class="delta">Meta + Snapchat + TikTok ≈ KWD 59.1K</span></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/mahashi_dashboard.png" alt="Sales dashboard for Mahashi Station, 1 January to 31 July 2026: 8,884 invoices, KWD 196,738.4 total" loading="lazy"><figcaption>Ordering system · 1 Jan – 31 Jul 2026 · KWD 196,738</figcaption></figure>
+    <figure><img src="img/mahashi_shopify.png" alt="Shopify total sales over time for Mahashi Station, 1 August to 31 October 2026: KWD 72,859.411" loading="lazy"><figcaption>Shopify · 1 Aug – 31 Oct 2026 · KWD 72,859 (store moved to Shopify in August)</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">Snapchat Ads</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Snapchat spend, 2026</span><div class="row"><span class="to num">$39.8K</span></div><span class="delta">Two ad accounts · Kuwait</span></div>
+    <div class="kpi"><span class="kname">Cost per purchase</span><div class="row"><span class="to num">$9.71</span></div><span class="delta">604 purchases · 11 Aug – 5 Nov 2026</span></div>
+    <div class="kpi"><span class="kname">Click rate</span><div class="row"><span class="to num">3.08%</span></div><span class="delta">65.5K clicks on 2.1M impressions</span></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/snap_mahashi_new.jpg" alt="Snapchat Ads Manager, Mahashi Station, 11 August to 5 November 2026: $5,861.92 spent, 2,124,784 impressions, 3.08% click rate; catalog campaign 252 purchases at $8.26" loading="lazy"><figcaption>Snapchat · 11 Aug – 5 Nov 2026 · catalog sales at $8.26 per purchase</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">TikTok Ads · 2026</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">TikTok spend</span><div class="row"><span class="to num">$19.9K</span></div><span class="delta">1 Jan – 4 Nov 2026 · 94 campaigns</span></div>
+    <div class="kpi"><span class="kname">Conversions</span><div class="row"><span class="to num">1,616</span></div><span class="delta">$12.34 per conversion</span></div>
+    <div class="kpi"><span class="kname">Reach efficiency</span><div class="row"><span class="to num">$1.85</span></div><span class="delta">CPM · 10.8M impressions · $0.25 CPC</span></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/tt_mahashi.jpg" alt="TikTok Ads Manager, Mahashi Station, 1 January to 4 November 2026: total of 94 campaigns, $19,936.43 spend" loading="lazy"><figcaption>TikTok · 1 Jan – 4 Nov 2026 · $19,936 spend</figcaption></figure>
+  </div>
+</article>
+
+<!-- VERONA -->
+<article class="case" id="verona">
+  <div class="case-head">
+    <div class="mark logo full"><img src="img/logo_verona.jpg" alt="Verona Choco logo"></div>
+    <div>
+      <div class="eyebrow">Case study 02</div>
+      <h2>Verona Choco</h2>
+      <div class="tags"><span>Kuwait</span><span>Chocolate &amp; gifting · Shopify</span><span>Meta Ads</span><span>2025</span><span>Account currency SAR</span></div>
+    </div>
+  </div>
+  <p class="headline">Took ROAS from <em>2.07x</em> to <em>4.45x</em> and cut cost per order by <em>60%</em>, while increasing monthly spend.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">ROAS</span><div class="row"><span class="from num">2.07x</span><span class="arrow">→</span><span class="to num">4.45x</span></div><span class="delta">Jan–Feb vs May–Sep 2025 · +115%</span></div>
+    <div class="kpi"><span class="kname">Cost per order</span><div class="row"><span class="from num">119 SAR</span><span class="arrow">→</span><span class="to num">47 SAR</span></div><span class="delta">−60%</span></div>
+    <div class="kpi"><span class="kname">Orders per month</span><div class="row"><span class="from num">129</span><span class="arrow">→</span><span class="to num">465</span></div><span class="delta">3.6× volume</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A premium chocolate brand stuck around 2x ROAS and over 115 SAR per order, too expensive to scale for the gifting seasons that drive the category in Kuwait.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>Rebuilt testing on ABO with new creatives launched every few weeks.</li>
+      <li>Seasonal angles for Eid, Graduation and Hajj season.</li>
+      <li>Influencer variations and new‑product launches as separate ad sets.</li>
+      <li>CBO for scaling winners and a dedicated retargeting campaign.</li>
+    </ul></div>
+    <div><h3>Results (May–Sep 2025)</h3><ul>
+      <li class="num">110.2K SAR spend → 490.4K SAR revenue</li>
+      <li class="num">4.45x ROAS · 2,323 purchases</li>
+      <li class="num">June 2025: 5.33x ROAS, 166.8K SAR in one month</li>
+      <li class="num">Best single ad set: 7.29x ROAS</li>
+    </ul></div>
+  </div>
+  <div class="chart">
+    <div class="cap"><b>Monthly ROAS, Jan – Sep 2025</b><span>Bar labels show monthly spend (SAR) · Meta Ads Manager</span></div>
+    <div class="scroll" id="chart-verona"></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/verona_janfeb2025.jpg" alt="Ads Manager table, Verona Choco, 1 Jan to 28 Feb 2025: 30,790.72 SAR spent, 63,668.50 SAR purchase value, 2.07 ROAS, 258 purchases" loading="lazy"><figcaption>Before · 1 Jan – 28 Feb 2025 · 2.07x</figcaption></figure>
+    <figure><img src="img/verona_maysep2025.jpg" alt="Ads Manager table, Verona Choco, 1 May to 30 Sep 2025: 110,156.17 SAR spent, 490,354.17 SAR purchase value, 4.45 ROAS, 2,323 purchases" loading="lazy"><figcaption>After · 1 May – 30 Sep 2025 · 4.45x</figcaption></figure>
+    <figure><img src="img/verona_jun2025.jpg" alt="Ads Manager table, Verona Choco, June 2025: 31,266.20 SAR spent, 166,784.95 SAR purchase value, 5.33 ROAS, 618 purchases" loading="lazy"><figcaption>Peak · June 2025 · 5.33x</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">2026 · New Shopify store (store sales, KWD)</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Store sales, Jan – Oct 2026</span><div class="row"><span class="to num">KWD 159.7K</span></div><span class="delta">6,205 orders on Shopify</span></div>
+    <div class="kpi"><span class="kname">Peak month</span><div class="row"><span class="to num">KWD 40.3K</span></div><span class="delta">May 2026 · 1,469 orders · +291% vs April</span></div>
+    <div class="kpi"><span class="kname">Store sales ÷ ad spend</span><div class="row"><span class="to num">≈3.1x</span></div><span class="delta">Meta + Snapchat + TikTok, Jan – Oct 2026</span></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/verona_shopify_ytd.png" alt="Shopify total sales over time for Verona, 1 January to 31 October 2026: KWD 159,663.684, peaking in May" loading="lazy"><figcaption>Shopify · 1 Jan – 31 Oct 2026 · KWD 159,663</figcaption></figure>
+    <figure><img src="img/verona_shopify_may.png" alt="Shopify total sales over time for Verona, May 2026: KWD 40,279.850, up 291% on 31 March to 30 April" loading="lazy"><figcaption>Shopify · May 2026 · KWD 40,280 · +291%</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">Snapchat Ads · 2026</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Snapchat spend</span><div class="row"><span class="to num">$30.2K</span></div><span class="delta">12 Mar – 5 Nov 2026 · 23.5M impressions</span></div>
+    <div class="kpi"><span class="kname">Best campaign</span><div class="row"><span class="to num">$8.59</span></div><span class="delta">per purchase · raw‑photo carousel · 577 purchases</span></div>
+    <div class="kpi"><span class="kname">Graduation season</span><div class="row"><span class="to num">$10.21</span></div><span class="delta">per purchase · 234 purchases</span></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/snap_verona.jpg" alt="Snapchat Ads Manager, Verona New 2026, 12 March to 5 November 2026: $30,183.90 spent, 23.5M impressions; July creative 428 purchases at $12.03, Graduation 234 at $10.21, April win ads 157 at $7.82" loading="lazy"><figcaption>Snapchat · 12 Mar – 5 Nov 2026 · $30,184 spend</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">TikTok Ads · 2026</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">TikTok spend</span><div class="row"><span class="to num">$6.9K</span></div><span class="delta">1 Jan – 4 Nov 2026 · 3.6M impressions</span></div>
+    <div class="kpi"><span class="kname">Conversions</span><div class="row"><span class="to num">488</span></div><span class="delta">$14.24 per conversion</span></div>
+    <div class="kpi"><span class="kname">Click rate</span><div class="row"><span class="to num">0.99%</span></div><span class="delta">35.7K clicks · $0.19 CPC</span></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/tt_verona.jpg" alt="TikTok Ads Manager, Verona new 2026, 1 January to 4 November 2026: total of 13 campaigns, $6,949.21 spend" loading="lazy"><figcaption>TikTok · 1 Jan – 4 Nov 2026 · $6,949 spend</figcaption></figure>
+  </div>
+</article>
+
+<!-- CAFFEINCO -->
+<article class="case" id="caffeinco">
+  <div class="case-head">
+    <div class="mark logo full"><img src="img/logo_caffeinco.jpg" alt="Caffeinco logo"></div>
+    <div>
+      <div class="eyebrow">Case study 03</div>
+      <h2>Caffeinco</h2>
+      <div class="tags"><span>Kuwait · UAE · Qatar</span><span>Coffee &amp; capsules · Shopify</span><span>Meta &amp; Snapchat</span><span>From 31 Aug 2026</span><span>USD</span></div>
+    </div>
+  </div>
+  <p class="headline">Turnaround in nine weeks: ROAS from <em>1.41x</em> to <em>3.43x</em> and revenue up <em>247%</em> on 43% more spend.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">ROAS</span><div class="row"><span class="from num">1.41x</span><span class="arrow">→</span><span class="to num">3.43x</span></div><span class="delta">+143%</span></div>
+    <div class="kpi"><span class="kname">Cost per order</span><div class="row"><span class="from num">$26.03</span><span class="arrow">→</span><span class="to num">$17.05</span></div><span class="delta">−34%</span></div>
+    <div class="kpi"><span class="kname">Purchase revenue</span><div class="row"><span class="from num">$9.2K</span><span class="arrow">→</span><span class="to num">$32.0K</span></div><span class="delta">+247% · 547 orders</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A multi‑country coffee brand losing money on ads: 1.41x ROAS over the previous three months, budget spread across broad campaigns with weak results.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>Restructured into ABO sales campaigns per market (KW, UAE, Qatar).</li>
+      <li>Retargeting built on winning audiences, one per region.</li>
+      <li>Creative tests run separately from scaling budgets.</li>
+      <li>UTMs on every ad from day one, reported monthly in KWD.</li>
+    </ul></div>
+    <div><h3>Results (31 Aug – 3 Nov 2026)</h3><ul>
+      <li class="num">$9.3K spend → $32.0K revenue</li>
+      <li class="num">3.43x ROAS · 547 purchases</li>
+      <li class="num">UAE + Qatar retargeting: 4.50x ROAS</li>
+      <li class="num">Kuwait retargeting: 3.38x ROAS, 200 orders</li>
+    </ul></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/caffeinco_before.jpg" alt="Ads Manager table, Caffeinco, 1 Jun to 30 Aug 2026: $6,533.79 spent, $9,232.37 purchase value, 1.41 ROAS, 251 purchases" loading="lazy"><figcaption>Before · 1 Jun – 30 Aug 2026 · 1.41x</figcaption></figure>
+    <figure><img src="img/caffeinco_after.jpg" alt="Ads Manager table, Caffeinco, 31 Aug to 3 Nov 2026: $9,326.85 spent, $32,015.70 purchase value, 3.43 ROAS, 547 purchases" loading="lazy"><figcaption>After · 31 Aug – 3 Nov 2026 · 3.43x</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">Shopify store sales (KWD)</div>
+  <div class="ba two">
+    <div class="kpi"><span class="kname">Store sales, Sep – Oct 2026</span><div class="row"><span class="to num">KWD 15.6K</span></div><span class="delta">First two full months</span></div>
+    <div class="kpi"><span class="kname">vs previous two months</span><div class="row"><span class="from num">≈KWD 5.8K</span><span class="arrow">→</span><span class="to num">+169%</span></div><span class="delta">Jul 2 – Aug 31, 2026</span></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/caffeinco_shopify.png" alt="Shopify total sales over time for Caffeinco, 1 September to 31 October 2026: KWD 15,608.437, up 169% on 2 July to 31 August" loading="lazy"><figcaption>Shopify Analytics · 1 Sep – 31 Oct 2026 vs 2 Jul – 31 Aug 2026</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">Snapchat Ads</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Snapchat spend</span><div class="row"><span class="to num">$4.5K</span></div><span class="delta">26 Aug – 5 Nov 2026</span></div>
+    <div class="kpi"><span class="kname">Purchases</span><div class="row"><span class="to num">280</span></div><span class="delta">$16.10 per purchase</span></div>
+    <div class="kpi"><span class="kname">Kuwait creative test</span><div class="row"><span class="to num">$13.53</span></div><span class="delta">per purchase · 175 purchases</span></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/snap_caffeinco.jpg" alt="Snapchat Ads Manager, Caffeinco, 26 August to 5 November 2026: $4,507.49 spent, 1,208,713 impressions, 280 purchases across campaigns" loading="lazy"><figcaption>Snapchat · 26 Aug – 5 Nov 2026 · $4,507 spend</figcaption></figure>
+  </div>
+</article>
+
+<!-- NASHMI -->
+<article class="case" id="nashmi">
+  <div class="case-head">
+    <div class="mark logo full"><img src="img/logo_nashmi.jpg" alt="Al Nashmi logo"></div>
+    <div>
+      <div class="eyebrow">Case study 04</div>
+      <h2>Al Nashmi</h2>
+      <div class="tags"><span>Kuwait</span><span>Shopify</span><span>Meta Ads</span><span>2026</span><span>Account currency SAR</span></div>
+    </div>
+  </div>
+  <p class="headline">Launched paid social from zero and reached a <em>3.14x</em> ROAS on sales campaigns in the first season.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Sales‑campaign ROAS</span><div class="row"><span class="to num">3.14x</span></div><span class="delta">18.0K SAR → 56.5K SAR</span></div>
+    <div class="kpi"><span class="kname">Purchases</span><div class="row"><span class="to num">382</span></div><span class="delta">47 SAR per order on sales campaigns</span></div>
+    <div class="kpi"><span class="kname">Best test</span><div class="row"><span class="to num">3.60x</span></div><span class="delta">Design‑testing campaign</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A new account with no ad history, so no pixel data and no proven creatives to start from.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>Monthly creative batches (July, August) tested on ABO.</li>
+      <li>A separate design‑testing campaign to find the strongest visuals.</li>
+      <li>Winners consolidated into one scaling campaign.</li>
+      <li>A messaging campaign tested as an extra channel.</li>
+    </ul></div>
+    <div><h3>Results (2026)</h3><ul>
+      <li class="num">July winners: 3.05x ROAS, 285 orders</li>
+      <li class="num">Design testing: 3.60x ROAS</li>
+      <li class="num">Blended 2.11x including the messaging test (no direct purchases)</li>
+    </ul></div>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">Shopify store sales (KWD)</div>
+  <div class="ba two">
+    <div class="kpi"><span class="kname">Store sales, Apr – Oct 2026</span><div class="row"><span class="to num">KWD 25.6K</span></div><span class="delta">From the store's first sales in April</span></div>
+    <div class="kpi"><span class="kname">Store sales ÷ ad spend</span><div class="row"><span class="to num">≈9.9x</span></div><span class="delta">Meta + Snapchat ≈ KWD 2.6K</span></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/nashmi_shopify.png" alt="Shopify total sales over time for Al Nashmi, 1 January to 31 October 2026: KWD 25,558.202, with sales starting in April" loading="lazy"><figcaption>Shopify · 1 Jan – 31 Oct 2026 · KWD 25,558</figcaption></figure>
+    <figure><img src="img/nashmi_2026.jpg" alt="Ads Manager table, Al Nashmi, 1 Jan to 3 Nov 2026: 26,786.98 SAR spent, 56,501.73 SAR purchase value, 2.11 blended ROAS, 382 purchases" loading="lazy"><figcaption>1 Jan – 3 Nov 2026 · all campaigns</figcaption></figure>
+  </div>
+  <div class="eyebrow" style="margin-top:8px">Snapchat Ads</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Snapchat spend</span><div class="row"><span class="to num">$1.3K</span></div><span class="delta">11 Aug – 5 Nov 2026</span></div>
+    <div class="kpi"><span class="kname">Purchases</span><div class="row"><span class="to num">104</span></div><span class="delta">$12.31 per purchase</span></div>
+    <div class="kpi"><span class="kname">July winners</span><div class="row"><span class="to num">$9.81</span></div><span class="delta">per purchase · 59 purchases</span></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/snap_nashmi.jpg" alt="Snapchat Ads Manager, Al Nashmi, 11 August to 5 November 2026: $1,280.75 spent, 473,473 impressions; July winners campaign 59 purchases at $9.81" loading="lazy"><figcaption>Snapchat · 11 Aug – 5 Nov 2026 · $1,281 spend</figcaption></figure>
+  </div>
+</article>
+
+<!-- ANTEP -->
+<article class="case" id="antep">
+  <div class="case-head">
+    <div class="mark logo"><img src="img/logo_antep.jpg" alt="Antep logo"></div>
+    <div>
+      <div class="eyebrow">Case study 05</div>
+      <h2>Antep</h2>
+      <div class="tags"><span>Kuwait</span><span>Kunafa &amp; baklava · Zyda ordering</span><span>Meta · Snapchat · TikTok · Google</span><span>2 ad accounts per platform</span></div>
+    </div>
+  </div>
+  <p class="headline">Ramadan 2026: store sales up <em>761%</em> on the month before, and <em>6% higher</em> than Ramadan 2025 on 35% less Meta spend.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Store sales (Zyda), Ramadan 2026</span><div class="row"><span class="from num">KWD 1.3K</span><span class="arrow">→</span><span class="to num">KWD 10.8K</span></div><span class="delta">Month before vs Ramadan · +761%</span></div>
+    <div class="kpi"><span class="kname">Orders</span><div class="row"><span class="from num">136</span><span class="arrow">→</span><span class="to num">1,176</span></div><span class="delta">+765% · 1,071 customers</span></div>
+    <div class="kpi"><span class="kname">Store sales ÷ ad spend</span><div class="row"><span class="to num">≈2.4x</span></div><span class="delta">Meta + Snapchat ≈ KWD 4.6K</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A Kuwaiti kunafa and baklava brand with two ad accounts on every platform and roughly SAR 1.3M spent on Meta since 2024. Orders close on the brand's Zyda ordering site and on WhatsApp, so ad‑platform ROAS understates the result. The job was to make Ramadan, the biggest season of the year, pay back in real store sales.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>Dedicated Ramadan sales campaigns launched a day before Ramadan, plus a "winners" campaign for the best ads.</li>
+      <li>Product‑led creatives (kunafa) and new influencer content tested on ABO.</li>
+      <li>WhatsApp conversation campaigns for customers who order by message.</li>
+      <li>Snapchat sales campaigns for Ramadan nights; Google Search and calls for high‑intent demand.</li>
+    </ul></div>
+    <div><h3>Results (18 Feb – 19 Mar 2026)</h3><ul>
+      <li class="num">Zyda: KWD 10,841 net sales · 1,176 orders</li>
+      <li class="num">Meta: 399 purchases · cost per purchase down 19% (SAR 158 → 128)</li>
+      <li class="num">Meta "Winner Ramadan" campaign: 1.96x ROAS</li>
+      <li class="num">Snapchat: 2.34x ROAS · 87 purchases · 498 add‑to‑carts</li>
+    </ul></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/antep_zyda_ram26.jpg" alt="Zyda sales analytics, Antepkw, 18 February to 19 March 2026: KWD 10,840.750 net sales, up 761%; 1,176 orders, up 765%; KWD 9,591 the year before, up 13%" loading="lazy"><figcaption>Zyda · Ramadan 2026 · KWD 10,841 · +761%</figcaption></figure>
+    <figure><img src="img/antep_meta1_ram26.jpg" alt="Meta Ads Manager, ANTEP - SAR, 18 February to 19 March 2026: SAR 50,919.54 spent, SAR 52,133.10 purchase value, 399 purchases" loading="lazy"><figcaption>Meta · Ramadan 2026 · 399 purchases</figcaption></figure>
+    <figure><img src="img/antep_snap_ram26.jpg" alt="Snapchat Ads Manager, Antep, 18 February to 19 March 2026: $1,328.59 spent, $3,111.88 purchase value, 2.34 ROAS, 87 purchases" loading="lazy"><figcaption>Snapchat · Ramadan 2026 · 2.34x ROAS</figcaption></figure>
+  </div>
+
+  <div class="eyebrow" style="margin-top:12px">Scale record · Ramadan 2024 across four platforms</div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Store sales (Zyda)</span><div class="row"><span class="from num">KWD 22.9K</span><span class="arrow">→</span><span class="to num">KWD 47.0K</span></div><span class="delta">Month before vs Ramadan · +105% · 4,899 orders</span></div>
+    <div class="kpi"><span class="kname">Ad budget managed</span><div class="row"><span class="to num">≈SAR 287K</span></div><span class="delta">30 days · Meta, TikTok, Snapchat, Google</span></div>
+    <div class="kpi"><span class="kname">Meta cost per purchase</span><div class="row"><span class="from num">SAR 130</span><span class="arrow">→</span><span class="to num">SAR 96</span></div><span class="delta">Rest of 2024 vs Ramadan · 2,045 purchases</span></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/antep_zyda_ram24.jpg" alt="Zyda sales analytics, Antepkw, 11 March to 9 April 2024: KWD 47,025 net sales, up 105%; 4,899 orders, up 99%" loading="lazy"><figcaption>Zyda · Ramadan 2024 · KWD 47,025 · +105%</figcaption></figure>
+    <figure><img src="img/antep_meta1_ram24.jpg" alt="Meta Ads Manager, ANTEP - SAR account, 11 March to 9 April 2024: SAR 109,134.04 spent, SAR 159,870.61 purchase value, 1.46 ROAS, 1,246 purchases" loading="lazy"><figcaption>Meta · account 1 · 1.46x · 1,246 purchases</figcaption></figure>
+    <figure><img src="img/antep_meta2_ram24.jpg" alt="Meta Ads Manager, Antep Sar account, 11 March to 9 April 2024: SAR 88,125.81 spent, SAR 106,335.30 purchase value, 1.21 ROAS, 799 purchases" loading="lazy"><figcaption>Meta · account 2 · 1.21x · 799 purchases</figcaption></figure>
+    <figure><img src="img/antep_tt_ram24.jpg" alt="TikTok Ads Manager, Antep, 11 March to 9 April 2024: total of 74 campaigns, SAR 25,641.31 spend" loading="lazy"><figcaption>TikTok · 462 conversions · SAR 55.50 each</figcaption></figure>
+    <figure><img src="img/antep_google_ram24.jpg" alt="Google Ads, Antep, 11 March to 9 April 2024: 809.11 conversions, up 362.12; 702,103 impressions; SAR 16,377.75 cost" loading="lazy"><figcaption>Google Ads · 809 conversions · +81%</figcaption></figure>
+    <figure><img src="img/antep_snap_ram24.jpg" alt="Snapchat Ads Manager, Antep, 11 March to 9 April 2024: $12,674.36 spent, 16,052 clicks, 3,198,563 impressions" loading="lazy"><figcaption>Snapchat · $12,674 spend · 3.2M impressions</figcaption></figure>
+  </div>
+  <p class="note">Ad accounts are billed in SAR; the business sells in Kuwait in KWD. Meta‑attributed ROAS sits near 1x because many orders close on WhatsApp and Zyda outside the pixel, which is why store sales are shown alongside.</p>
+</article>
+
+<!-- MAZAG -->
+<article class="case" id="mazag">
+  <div class="case-head">
+    <div class="mark logo"><img src="img/mazag_logo.jpg" alt="Mazag Al Molouk logo"></div>
+    <div>
+      <div class="eyebrow">Case study 06</div>
+      <h2>Mazag Al Molouk</h2>
+      <div class="tags"><span>Egypt</span><span>Nuts &amp; coffee · Shopify</span><span>Meta Ads</span><span>1 Feb – 31 Mar 2026</span><span>EGP</span></div>
+    </div>
+  </div>
+  <p class="headline">A Ramadan launch that turned <em>EGP 43.5K</em> in Meta spend into <em>EGP 859.5K</em> in store sales in two months.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Meta ROAS</span><div class="row"><span class="to num">15.58x</span></div><span class="delta">EGP 43.5K → EGP 678K attributed</span></div>
+    <div class="kpi"><span class="kname">Store sales (Shopify)</span><div class="row"><span class="to num">EGP 859.5K</span></div><span class="delta">811 orders · 3.05% conversion rate</span></div>
+    <div class="kpi"><span class="kname">Cost per purchase</span><div class="row"><span class="to num">EGP 71</span></div><span class="delta">609 Meta‑attributed purchases</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A nuts and coffee brand going into Ramadan, the biggest buying season of the year for the category, with almost no online sales history. The plan had to find winning offers in days and scale before the season peaked.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>Early‑February test campaigns for two product lines: Ramadan Yamish and nuts (Meksarat).</li>
+      <li>Winners moved into dedicated sales campaigns ahead of Ramadan.</li>
+      <li>Separate scaling campaigns with fixed daily budgets for the strongest offers.</li>
+      <li>Funnel tracked from content view to purchase to spot drop‑offs.</li>
+    </ul></div>
+    <div><h3>Results (Feb – Mar 2026)</h3><ul>
+      <li class="num">Yamish campaign: 20.93x ROAS · EGP 491.9K from EGP 23.5K</li>
+      <li class="num">Nuts campaigns: 9.4x – 9.6x ROAS</li>
+      <li class="num">25.1K content views → 3,537 add‑to‑carts → 1,693 checkouts</li>
+      <li class="num">Store sessions 25.9K · store sales ≈19.8x Meta spend</li>
+    </ul></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/mazag_meta.jpg" alt="Ads Manager table, Mazag Al Molouk, 1 February to 31 March 2026: EGP 43,517.31 spent, EGP 678,028 purchase value, 15.58 ROAS; Yamish campaign 20.93 ROAS" loading="lazy"><figcaption>Meta Ads Manager · 1 Feb – 31 Mar 2026 · 15.58x</figcaption></figure>
+    <figure><img src="img/mazag_shopify.jpg" alt="Shopify summary, 1 February to 31 March 2026: 25.9K sessions, EGP 859.5K total sales, 811 orders, 3.05% conversion rate" loading="lazy"><figcaption>Shopify · 1 Feb – 31 Mar 2026 · EGP 859.5K · 811 orders</figcaption></figure>
+  </div>
+</article>
+
+<!-- BATCI -->
+<article class="case" id="batci">
+  <div class="case-head">
+    <div class="mark logo"><img src="img/logo_ghaya.jpg" alt="Ghaya Cosmetics logo"></div>
+    <div>
+      <div class="eyebrow">Case study 07</div>
+      <h2>Ghaya Cosmetics</h2>
+      <div class="tags"><span>Kuwait</span><span>Cosmetics &amp; hair care · WordPress / WooCommerce</span><span>Meta Ads · website + WhatsApp</span><span>2025 – 2026</span></div>
+    </div>
+  </div>
+  <p class="headline">Took a new WordPress store to <em>KWD 42K</em> in sales and <em>1,600+</em> orders in its first 15 months, at about <em>4.2x</em> store sales to ad spend.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Store sales (WooCommerce)</span><div class="row"><span class="to num">KWD 42.3K</span></div><span class="delta">May 2025 – Oct 2026 · 1,619 orders</span></div>
+    <div class="kpi"><span class="kname">Net sales, Jan – Oct 2026</span><div class="row"><span class="to num">KWD 27.0K</span></div><span class="delta">1,040 orders · 1,157 items sold</span></div>
+    <div class="kpi"><span class="kname">Store sales ÷ Meta spend</span><div class="row"><span class="to num">≈4.2x</span></div><span class="delta">All Meta spend ≈ KWD 10.1K ($32.8K)</span></div>
+  </div>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Website purchases</span><div class="row"><span class="from num">83</span><span class="arrow">→</span><span class="to num">375</span></div><span class="delta">2025 vs 2026 · $34.7K revenue at 3.10x</span></div>
+    <div class="kpi"><span class="kname">WhatsApp conversations</span><div class="row"><span class="from num">2,078</span><span class="arrow">→</span><span class="to num">4,251</span></div><span class="delta">2025 vs 2026 · +105%</span></div>
+    <div class="kpi"><span class="kname">Cost per conversation</span><div class="row"><span class="from num">$3.64</span><span class="arrow">→</span><span class="to num">$2.89</span></div><span class="delta">−21% · best offer at $1.46</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A Kuwaiti cosmetics brand, best known for its hair concealer, newly launched on WordPress and selling through two routes: checkout on the website and orders over WhatsApp. Each route needed its own account, objective and budget, so website sales could scale without starving the chat orders.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>Split into two ad accounts: one optimised for website purchases, one for WhatsApp conversations.</li>
+      <li>Monthly design batches tested on ABO, with winners moved into a scaling campaign.</li>
+      <li>Offer tests (15% off + free delivery, 30% off) to lift conversion in slower months.</li>
+      <li>Seasonal angles such as back‑to‑school and new‑brand launches.</li>
+    </ul></div>
+    <div><h3>Results (Jan – Oct 2026)</h3><ul>
+      <li class="num">Website: $11.2K spend → $34.7K revenue · 3.10x</li>
+      <li class="num">Peak month: March 2026 at 4.41x ROAS</li>
+      <li class="num">"New Batch" campaign: 4.31x · "Winner Designs": 50 purchases at 3.44x</li>
+      <li class="num">WhatsApp: 4,251 conversations at $2.89</li>
+    </ul></div>
+  </div>
+  <div class="chart">
+    <div class="cap"><b>Store sales by month (KWD thousands)</b><span>Bar labels show orders · WooCommerce, excluding cancelled and failed</span></div>
+    <div class="scroll" id="chart-ghaya-store"></div>
+  </div>
+  <div class="chart">
+    <div class="cap"><b>Website ROAS by month, 2026</b><span>Bar labels show monthly spend · Meta Ads Manager</span></div>
+    <div class="scroll" id="chart-batci"></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/ghaya_woo_2026.jpg" alt="WooCommerce Analytics for Ghaya Cosmetics, 1 January to 31 October 2026: net sales KWD 26,962.189, 1,040 orders, 1,157 items sold, with a monthly net sales line" loading="lazy"><figcaption>WooCommerce · 1 Jan – 31 Oct 2026 · KWD 26,962 net sales · 1,040 orders (store launched mid‑2025)</figcaption></figure>
+    <figure><img src="img/batci_sales.jpg" alt="Meta Ads Manager, Ghaya Cosmetics website account, 1 January to 4 November 2026: $11,208.61 spent, $34,749.97 purchase value, 3.10 ROAS, 375 purchases" loading="lazy"><figcaption>Website sales account · 1 Jan – 4 Nov 2026 · 3.10x</figcaption></figure>
+    <figure><img src="img/batci_msg.jpg" alt="Meta Ads Manager, Ghaya Cosmetics WhatsApp account, 1 January to 4 November 2026: $12,268.18 spent, 4,251 messaging conversations at $2.89" loading="lazy"><figcaption>WhatsApp account · 1 Jan – 4 Nov 2026 · 4,251 conversations</figcaption></figure>
+  </div>
+</article>
+
+<!-- SCRUB -->
+<article class="case" id="scrub">
+  <div class="case-head">
+    <div class="mark logo full"><img src="img/logo_scrub.jpg" alt="Scrubs &amp; More logo"></div>
+    <div>
+      <div class="eyebrow">Case study 08</div>
+      <h2>Scrubs &amp; More</h2>
+      <div class="tags"><span>Kuwait</span><span>Fashion · medical scrubs</span><span>Meta Ads · conversations</span><span>2025 – 2026</span><span>SAR</span></div>
+    </div>
+  </div>
+  <p class="headline">Halved the cost of a customer conversation and got <em>90%</em> of last year's chat volume on <em>44%</em> of the budget.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Cost per conversation</span><div class="row"><span class="from num">SAR 16.34</span><span class="arrow">→</span><span class="to num">SAR 8.00</span></div><span class="delta">2025 vs 2026 · −51%</span></div>
+    <div class="kpi"><span class="kname">Conversations started</span><div class="row"><span class="from num">1,850</span><span class="arrow">→</span><span class="to num">1,670</span></div><span class="delta">On SAR 13.4K instead of SAR 30.2K</span></div>
+    <div class="kpi"><span class="kname">Best campaigns</span><div class="row"><span class="to num">SAR 4.10</span></div><span class="delta">per conversation · Spark ads, June 2026</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A Kuwaiti scrubs and uniform brand that sells mostly through direct messages. In 2025 the account ran Engagement‑objective message campaigns at SAR 13–16 per conversation, and website campaigns returned very few tracked purchases.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>Moved message campaigns from the Engagement objective to Sales with a conversation goal.</li>
+      <li>Ran Spark ads built on creator content instead of brand‑only posts.</li>
+      <li>Refreshed creative batches monthly (June, July, August) and moved budget to winners.</li>
+      <li>Cut spend on website campaigns that were not converting.</li>
+    </ul></div>
+    <div><h3>Results (Jan – Oct 2026)</h3><ul>
+      <li class="num">1,670 conversations at SAR 8.00</li>
+      <li class="num">Spark "June creatives": 1,270 conversations at SAR 5.90</li>
+      <li class="num">Spark "First content": 279 at SAR 5.66</li>
+      <li class="num">Total spend down 56% year on year</li>
+    </ul></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/scrub_2025.jpg" alt="Meta Ads Manager, Scrub & More, 1 January to 31 December 2025: SAR 30,235.51 spent, 1,850 messaging conversations at SAR 16.34" loading="lazy"><figcaption>Before · 2025 · 1,850 conversations at SAR 16.34</figcaption></figure>
+    <figure><img src="img/scrub_2026.jpg" alt="Meta Ads Manager, Scrub & More, 1 January to 4 November 2026: SAR 13,367.35 spent, 1,670 messaging conversations at SAR 8.00" loading="lazy"><figcaption>After · 2026 · 1,670 conversations at SAR 8.00</figcaption></figure>
+  </div>
+  <h3 style="margin-top:2.2rem">From chat to order</h3>
+  <p>Every WhatsApp lead was logged and followed up to a confirmed order. Across three tracked months the team turned <span class="num">2,219</span> inquiries into <span class="num">346</span> confirmed orders, and the close rate doubled as targeting and creative improved.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Confirmed WhatsApp orders</span><div class="row"><span class="to num">346</span></div><span class="delta">KWD 8,445 in value · June, Aug, Sep</span></div>
+    <div class="kpi"><span class="kname">Inquiry → order close rate</span><div class="row"><span class="from num">13.5%</span><span class="arrow">→</span><span class="to num">28.4%</span></div><span class="delta">June vs September · ×2.1</span></div>
+    <div class="kpi"><span class="kname">Website store</span><div class="row"><span class="to num">KWD 2,038</span></div><span class="delta">63 orders · AOV KWD 32.35 · 19,106 visits</span></div>
+  </div>
+  <div class="evidence one">
+    <figure><img src="img/scrub_store.jpg" alt="Scrub & More store dashboard: total sales KWD 2,038 from 63 orders, average order value KWD 32.349, 19,106 store visits, Apple Pay KWD 1,407 (44), K-NET KWD 539 (17), Visa/Master KWD 92 (2), delivery fees KWD 84" loading="lazy"><figcaption>Website store dashboard · KWD 2,038 from 63 orders, on top of orders closed in chat</figcaption></figure>
+  </div>
+  <p class="note">Chat‑to‑order figures are totals from the brand's own lead log (aggregated; no customer details shown). Website figures are the store dashboard exactly as exported.</p>
+</article>
+
+<article class="case" id="woi">
+  <div class="case-head">
+    <div class="mark logo full"><img src="img/logo_woi.jpg" alt="World of Investment logo"></div>
+    <div>
+      <div class="eyebrow">Case study 09</div>
+      <h2>World of Investment</h2>
+      <div class="tags"><span>Saudi Arabia</span><span>Investment services · lead gen</span><span>Meta Ads · WhatsApp</span><span>Aug 2025 – Nov 2026</span><span>SAR</span></div>
+    </div>
+  </div>
+  <p class="headline">Same season, one year later: <em>15% more</em> WhatsApp leads on <em>18% less</em> budget, and the cost of a lead down 29%.</p>
+  <div class="ba">
+    <div class="kpi"><span class="kname">Cost per WhatsApp conversation</span><div class="row"><span class="from num">SAR 7.37</span><span class="arrow">→</span><span class="to num">SAR 5.25</span></div><span class="delta">1 Aug – 5 Nov · 2025 vs 2026 · −29%</span></div>
+    <div class="kpi"><span class="kname">Conversations started</span><div class="row"><span class="from num">2,271</span><span class="arrow">→</span><span class="to num">2,617</span></div><span class="delta">+15% on SAR 13.7K instead of SAR 16.7K</span></div>
+    <div class="kpi"><span class="kname">Best month</span><div class="row"><span class="to num">SAR 4.09</span></div><span class="delta">826 conversations · August 2026 relaunch</span></div>
+  </div>
+  <div class="cols">
+    <div><h3>Challenge</h3><p>A Saudi investment services company that closes deals through WhatsApp. The first season (Aug 2025 – Feb 2026) ran one-off campaigns per creative and per occasion, with the cost of a conversation swinging between SAR 5 and SAR 10.5 from month to month.</p></div>
+    <div><h3>Strategy</h3><ul>
+      <li>Paused spend in the off-season (March – June) instead of buying expensive leads.</li>
+      <li>Relaunched in August with one always-on messages campaign carrying 70% of spend, instead of a new campaign for every creative.</li>
+      <li>Added a separate occasion campaign for Saudi National Day.</li>
+    </ul></div>
+    <div><h3>Results</h3><ul>
+      <li class="num">6,813 WhatsApp conversations in total at SAR 6.86</li>
+      <li class="num">Main 2026 campaign: 2,018 conversations at SAR 4.86</li>
+      <li class="num">August 2026: SAR 4.09 per conversation, the account's lowest</li>
+      <li class="num">2026 to date: 3,708 conversations at SAR 6.03 vs SAR 7.86 in 2025</li>
+    </ul></div>
+  </div>
+  <div class="chart">
+    <div class="cap"><b>Cost per WhatsApp conversation by month (SAR)</b><span>Lower is better · conversations under each month · paused Mar – Jul 2026 · Meta Ads Manager</span></div>
+    <div class="scroll" id="chart-woi"></div>
+  </div>
+  <div class="evidence">
+    <figure><img src="img/woi_2025.jpg" alt="Meta Ads Manager, World Of Investment, 1 August to 5 November 2025: SAR 16,746.46 spent, 2,271 messaging conversations at SAR 7.37" loading="lazy"><figcaption>Before · 1 Aug – 5 Nov 2025 · 2,271 conversations at SAR 7.37</figcaption></figure>
+    <figure><img src="img/woi_2026.jpg" alt="Meta Ads Manager, World Of Investment, 1 August to 5 November 2026: SAR 13,739.27 spent, 2,617 messaging conversations at SAR 5.25" loading="lazy"><figcaption>After · 1 Aug – 5 Nov 2026 · 2,617 conversations at SAR 5.25</figcaption></figure>
+  </div>
+</article>
+
+<footer>
+  <div class="eyebrow">Available for in‑house and agency roles across the GCC</div>
+  <div class="contact">Mahmoud Abdel-Aal</div>
+  <div>Performance Media Buyer · Cairo, open to relocation</div>
+  <div class="reach">
+    <span class="email num" id="email-text">mahmoudtaleb5200@gmail.com</span>
+    <button type="button" id="copy-email">Copy email</button>
+    <a href="https://www.linkedin.com/in/mahmoud-abdel-aal-51a70a199" target="_blank" rel="noopener">linkedin.com/in/mahmoud-abdel-aal-51a70a199</a>
+    <a href="tel:+201091789198" class="num">+20 109 178 9198</a>
+    <a href="https://wa.me/201091789198" target="_blank" rel="noopener">WhatsApp me</a>
+  </div>
+  <p class="note">All figures are Meta‑attributed purchase value and purchases as reported in Meta Ads Manager (default attribution), shown in each account's own currency. Monthly chart values are taken from Ads Manager month ranges.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var cb=document.getElementById('copy-email');
+  if(cb){cb.addEventListener('click',function(){
+    var t=document.getElementById('email-text').textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email-text'));var s=window.getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Selected';}
+    try{navigator.clipboard.writeText(t).then(function(){cb.textContent='Copied';},sel);}catch(e){sel();}
+  });}
+  function draw(id, data, opts){
+    var el=document.getElementById(id); if(!el) return;
+    var W=Math.max(560,data.length*72), H=260, padL=36, padR=12, padT=26, padB=44;
+    var max=opts.max, iw=W-padL-padR, ih=H-padT-padB, bw=iw/data.length;
+    var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+opts.label+'">';
+    for(var g=0; g<=max; g++){
+      var y=padT+ih-(g/max)*ih;
+      s+='<line x1="'+padL+'" x2="'+(W-padR)+'" y1="'+y+'" y2="'+y+'" stroke="var(--rule)" stroke-width="1"/>';
+      s+='<text x="'+(padL-8)+'" y="'+(y+4)+'" text-anchor="end" font-family="var(--mono)" font-size="11" fill="var(--muted)">'+g+(opts.unit==null?'x':opts.unit)+'</text>';
+    }
+    var best=data.reduce(function(a,b){return opts.low?(b.r<a.r?b:a):(b.r>a.r?b:a)});
+    data.forEach(function(d,i){
+      var h=(d.r/max)*ih, x=padL+i*bw+bw*0.18, w=bw*0.64, y=padT+ih-h;
+      var fill=d===best?'var(--gain)':'var(--accent)';
+      s+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+fill+'" opacity="'+(d===best?1:.85)+'"/>';
+      s+='<text x="'+(x+w/2)+'" y="'+(y-7)+'" text-anchor="middle" font-family="var(--display)" font-weight="700" font-size="14" fill="var(--ink)">'+d.r.toFixed(opts.dec==null?2:opts.dec)+'</text>';
+      s+='<text x="'+(x+w/2)+'" y="'+(H-padB+18)+'" text-anchor="middle" font-family="var(--body)" font-size="12" fill="var(--ink)">'+d.m+'</text>';
+      s+='<text x="'+(x+w/2)+'" y="'+(H-padB+34)+'" text-anchor="middle" font-family="var(--mono)" font-size="10.5" fill="var(--muted)">'+d.s+'</text>';
+    });
+    s+='</svg>'; el.innerHTML=s;
+  }
+  draw('chart-woi',[
+    {m:'Aug 25',r:8.92,s:'532'},{m:'Sep',r:8.65,s:'651'},{m:'Oct',r:5.41,s:'1,012'},{m:'Nov',r:10.51,s:'386'},{m:'Dec',r:8.58,s:'524'},
+    {m:'Jan 26',r:7.16,s:'683'},{m:'Feb',r:8.88,s:'398'},{m:'Aug',r:4.09,s:'826'},{m:'Sep',r:5.10,s:'841'},{m:'Oct',r:6.54,s:'841'}],{max:12,unit:'',low:true,label:'World of Investment monthly cost per WhatsApp conversation in SAR, lowest 4.09 in August 2026'});
+  draw('chart-mahashi',[
+    {m:'Jan',r:2.75,s:'$2.7K'},{m:'Feb',r:3.41,s:'$17.4K'},{m:'Mar',r:4.10,s:'$14.1K'},{m:'Apr',r:3.41,s:'$5.6K'},
+    {m:'May',r:4.14,s:'$16.6K'},{m:'Jun',r:4.46,s:'$24.3K'},{m:'Jul',r:3.22,s:'$17.6K'},{m:'Aug',r:4.33,s:'$11.8K'},
+    {m:'Sep',r:4.67,s:'$10.3K'},{m:'Oct',r:5.11,s:'$9.6K'}],{max:6,label:'Mahashi Station monthly ROAS 2026, from 2.75 in January to 5.11 in October'});
+  draw('chart-ghaya-store',[
+    {m:'Sep 25',r:3.87,s:'156'},{m:'Oct',r:3.28,s:'128'},{m:'Nov',r:3.03,s:'121'},{m:'Dec',r:2.93,s:'121'},{m:'Jan 26',r:4.13,s:'168'},
+    {m:'Feb',r:2.85,s:'114'},{m:'Mar',r:2.90,s:'107'},{m:'Apr',r:3.13,s:'122'},{m:'May',r:3.37,s:'116'},{m:'Jun',r:2.88,s:'107'},
+    {m:'Jul',r:3.23,s:'118'},{m:'Aug',r:2.55,s:'87'}],{max:5,unit:'K',dec:1,label:'Ghaya Cosmetics monthly store sales in KWD thousands, September 2025 to August 2026, peaking at 4.1K in January 2026'});
+  draw('chart-batci',[
+    {m:'Jan',r:3.07,s:'$1.6K'},{m:'Feb',r:4.17,s:'$1.1K'},{m:'Mar',r:4.41,s:'$1.3K'},{m:'Apr',r:2.56,s:'$1.5K'},
+    {m:'May',r:3.87,s:'$1.3K'},{m:'Jun',r:2.41,s:'$1.4K'},{m:'Jul',r:3.35,s:'$1.1K'},{m:'Aug',r:2.04,s:'$1.2K'}],{max:5,label:'Ghaya Cosmetics website ROAS by month 2026, peaking at 4.41 in March'});
+  draw('chart-verona',[
+    {m:'Jan',r:2.01,s:'11.8K'},{m:'Feb',r:2.00,s:'18.1K'},{m:'Mar',r:3.26,s:'27.7K'},{m:'Apr',r:2.14,s:'23.0K'},
+    {m:'May',r:3.96,s:'26.6K'},{m:'Jun',r:5.33,s:'31.3K'},{m:'Jul',r:3.41,s:'18.8K'},{m:'Aug',r:4.66,s:'14.1K'},
+    {m:'Sep',r:4.58,s:'16.2K'}],{max:6,label:'Verona Choco monthly ROAS 2025, from 2.01 in January to a 5.33 peak in June'});
+})();
+</script>
